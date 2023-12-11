@@ -9,7 +9,7 @@ interface Props {
 
 const ProjectBox = ({ title, shortDesc, skillList }: Props) => {
   return (
-    <div className="text-white h-[20rem] w-[26rem] rounded-2xl flex flex-col">
+    <div className="text-white h-[20rem] w-[26rem] rounded-2xl flex flex-col my-4 mx-4">
       <div className="flex items-end text-2xl font-medium h-[2lh]">
         <h2>{title}</h2>
       </div>
