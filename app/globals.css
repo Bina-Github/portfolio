@@ -9,3 +9,13 @@
     --cPurple: #7231BE;
     --cWhite: #e0e0e0;
 }
+
+@layer utilities {
+
+    .clip-footer {
+ 
+        clip-path: polygon(0 80%, 100% 0%, 100% 100%, 0% 100%);
+ 
+    }
+ 
+ }

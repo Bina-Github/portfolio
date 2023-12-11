@@ -4,7 +4,7 @@ import { projectArray } from "./projectArray";
 
 const ProjectColumn = () => {
   return (
-    <div className="ml-[700px] mr-5 mt-20 w-full">
+    <div className="ml-[700px] pr-5 pt-20 w-full">
       {/* Headline */}
       <div className="flex flex-row items-center justify-center mb-24">
         <div className="h-0.5 grow bg-gradient-to-r from-cPurple to-cYellow"></div>

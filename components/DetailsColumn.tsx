@@ -4,7 +4,7 @@ import { skillArray, toolsTechArray } from "./skillArrays";
 
 const DetailsColumn = () => {
   return (
-    <div className="h-screen fixed">
+    <div className="h-screen fixed z-10">
       <div className="bg-cYellow h-full w-[700px] absolute -skew-x-[5deg] -inset-x-[80px]"></div>
       <div className="mt-32 ml-14 absolute text-cBlack h-full w-[550px] font-bold">
         {/* Intro-Text */}
