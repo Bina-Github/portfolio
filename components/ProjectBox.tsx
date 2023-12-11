@@ -16,7 +16,7 @@ const ProjectBox = ({ title, shortDesc, skillList }: Props) => {
 
       <div className="border-[1px] border-white my-2"></div>
 
-      <div className="text-lg mb-4">{shortDesc}</div>
+      <p className="text-lg mb-4">{shortDesc}</p>
 
       <SkillsBox skillList={skillList} color="bg-cGray" textSize="text-sm" />
     </div>

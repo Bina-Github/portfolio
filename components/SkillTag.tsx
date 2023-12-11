@@ -18,12 +18,12 @@ const SkillTag = ({ name, svg, color, textSize }: Props) => {
       }
     >
       {svg && svg.length > 0 && (
-        <div
+        <p
           className="h-[1lh] w-[1lh]"
           dangerouslySetInnerHTML={{ __html: svg }}
         />
       )}
-      <div>{name}</div>
+      <p>{name}</p>
     </div>
   );
 };
