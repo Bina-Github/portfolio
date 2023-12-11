@@ -16,13 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={
-          raleway.className + " bg-cBlack w-screen h-screen overflow-hidden"
-        }
-      >
-        {children}
-      </body>
+      <body className={raleway.className + " bg-cBlack"}>{children}</body>
     </html>
   );
 }

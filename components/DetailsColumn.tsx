@@ -4,10 +4,10 @@ import { skillArray, toolsTechArray } from "./skillArrays";
 
 const DetailsColumn = () => {
   return (
-    <>
-      <div className="bg-cYellow h-screen w-[700px] -skew-x-[5deg] absolute -inset-x-[80px]"></div>
-      <div className="mt-32 ml-14 text-cBlack h-screen w-[550px] absolute font-bold">
-        <div className="mb-40">
+    <div className="h-screen fixed">
+      <div className="bg-cYellow h-full w-[700px] absolute -skew-x-[5deg] -inset-x-[80px]"></div>
+      <div className="mt-32 ml-14 absolute text-cBlack h-full w-[550px] font-bold">
+        <div className="mb-36">
           <h1 className="text-6xl leading-[80px]">
             Hi, ich bin
             <br />
@@ -22,7 +22,7 @@ const DetailsColumn = () => {
         <SkillsBox title="Skills" skillList={skillArray} />
         <SkillsBox title="Tools & Technologien" skillList={toolsTechArray} />
       </div>
-    </>
+    </div>
   );
 };
 
