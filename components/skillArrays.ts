@@ -53,7 +53,6 @@ export const skillArray = [
   },
   {
     name: "Prolog",
-    svg: "",
   },
 ];
 

@@ -7,6 +7,7 @@ const DetailsColumn = () => {
     <div className="h-screen fixed">
       <div className="bg-cYellow h-full w-[700px] absolute -skew-x-[5deg] -inset-x-[80px]"></div>
       <div className="mt-32 ml-14 absolute text-cBlack h-full w-[550px] font-bold">
+        {/* Intro-Text */}
         <div className="mb-36">
           <h1 className="text-6xl leading-[80px]">
             Hi, ich bin
@@ -19,8 +20,21 @@ const DetailsColumn = () => {
             aus Willich
           </h2>
         </div>
-        <SkillsBox title="Skills" skillList={skillArray} />
-        <SkillsBox title="Tools & Technologien" skillList={toolsTechArray} />
+        {/* Skill, Tool, Tech Auflistungen */}
+        <div className="flex flex-col gap-12">
+          <SkillsBox
+            title="Skills"
+            skillList={skillArray}
+            color="bg-cGray"
+            textSize="text-base"
+          />
+          <SkillsBox
+            title="Tools & Technologien"
+            skillList={toolsTechArray}
+            color="bg-cGray"
+            textSize="text-base"
+          />
+        </div>
       </div>
     </div>
   );

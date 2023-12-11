@@ -13,7 +13,7 @@ const ProjectColumn = () => {
       </div>
 
       {/* Project Boxes */}
-      <div className="flex flex-row flex-wrap">
+      <div className="flex flex-row flex-wrap justify-center gap-20">
         {projectArray.map(function (data) {
           return (
             <ProjectBox
