@@ -1,14 +1,12 @@
-import React from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 import SkillTag from "./SkillTag";
 
-interface Props {
+type Props = ComponentPropsWithoutRef<"div"> & {
   title?: string;
   skillList: Array<{ name: string; svg?: string }>;
-  color: string;
-  textSize: string;
-}
+};
 
-const SkillsBox = ({ title, skillList, color, textSize }: Props) => {
+const SkillsBox = ({ title, skillList, className }: Props) => {
   return (
     <div>
       {title && <h3 className="text-2xl mb-2">{title}</h3>}
@@ -19,8 +17,7 @@ const SkillsBox = ({ title, skillList, color, textSize }: Props) => {
               name={data.name}
               svg={data.svg}
               key={data.name}
-              color={color}
-              textSize={textSize}
+              className={className}
             />
           );
         })}

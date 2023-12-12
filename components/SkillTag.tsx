@@ -1,19 +1,15 @@
-import React from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 
-interface Props {
+type Props = ComponentPropsWithoutRef<"div"> & {
   name: string;
   svg?: string;
-  color: string;
-  textSize: string;
-}
+};
 
-const SkillTag = ({ name, svg, color, textSize }: Props) => {
+const SkillTag = ({ name, svg, className }: Props) => {
   return (
     <div
       className={
-        color +
-        " " +
-        textSize +
+        className +
         " px-2.5 py-1.5 text-cWhite rounded-full font-medium flex flex-row gap-1 items-center justify-center"
       }
     >

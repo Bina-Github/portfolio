@@ -1,11 +1,11 @@
 import React from "react";
 import SkillsBox from "./SkillsBox";
 
-interface Props {
+type Props = {
   title: string;
   shortDesc: string;
   skillList: Array<{ name: string; svg?: string }>;
-}
+};
 
 const ProjectBox = ({ title, shortDesc, skillList }: Props) => {
   return (
@@ -18,7 +18,7 @@ const ProjectBox = ({ title, shortDesc, skillList }: Props) => {
 
       <p className="text-lg mb-4">{shortDesc}</p>
 
-      <SkillsBox skillList={skillList} color="bg-cGray" textSize="text-sm" />
+      <SkillsBox skillList={skillList} className="bg-cGray text-sm" />
     </div>
   );
 };

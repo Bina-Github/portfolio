@@ -19,6 +19,7 @@ const config: Config = {
         cYellow: "var(--cYellow)",
         cPurple: "var(--cPurple)",
         cWhite: "var(--cWhite)",
+        cDark: "var(--cDark)",
       },
     },
   },

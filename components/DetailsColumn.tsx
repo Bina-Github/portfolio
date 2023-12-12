@@ -25,14 +25,12 @@ const DetailsColumn = () => {
           <SkillsBox
             title="Skills"
             skillList={skillArray}
-            color="bg-cGray"
-            textSize="text-base"
+            className="bg-cGray text-base"
           />
           <SkillsBox
             title="Tools & Technologien"
             skillList={toolsTechArray}
-            color="bg-cGray"
-            textSize="text-base"
+            className="bg-cGray text-base"
           />
         </div>
       </div>
