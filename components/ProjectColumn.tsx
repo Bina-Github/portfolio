@@ -3,7 +3,7 @@ import ProjectBox from "./ProjectBox";
 import { projectArray } from "./projectArray";
 
 type Props = {
-  activeProject: number | null;
+  activeProject: number;
   handleClick: (projectId: number) => void;
 };
 

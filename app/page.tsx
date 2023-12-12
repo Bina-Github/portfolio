@@ -6,10 +6,11 @@ import ProjectColumn from "@/components/ProjectColumn";
 import { useState } from "react";
 
 export default function Home() {
-  const [activeProject, setActiveProject] = useState<number | null>(null);
+  const [activeProject, setActiveProject] = useState(-1);
+
   const handleClick = (projectId: number) => {
     if (activeProject === projectId) {
-      setActiveProject(null);
+      setActiveProject(-1);
     } else {
       setActiveProject(projectId);
     }
@@ -18,7 +19,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden">
       <div className="relative mx-auto pb-36 max-w-[2000px] flex flex-row ">
-        <DetailsColumn />
+        <DetailsColumn activeProject={activeProject} />
         <ProjectColumn
           activeProject={activeProject}
           handleClick={handleClick}
