@@ -1,8 +1,7 @@
 export const projectArray = [
   {
     title: "Bachelor of Science (Informatik) - RWTH Aachen",
-    shortDesc:
-      "Studium an der RWTH Aachen mit diversen praktischen Projekten. Noch mehr Platzhalter Text. Ich muss mal schauen. Na ja.",
+    shortDesc: "Studium an der RWTH Aachen mit diversen praktischen Projekten",
     longDesc:
       "Während meines Studiums an der RWTH Aachen habe ich neben vielen theoretischen Grundlagen der Informatik auch einige praktische Erfahrungen im Programmieren gesammelt.\nDarunter fallen die Entwicklung eines Betriebssystems für den Mikrocontroller Atmega 644 in der Programmiersprache C und ein Teamprojekt, in dem wir in einer kleinen Gruppe die Website für ein fiktives Reiseportal entwickelt haben. Dabei habe ich erste Erfahrungen mit JavaScript, HTML, CSS, Github, Docker und Postman gesammelt.",
     tags: [
@@ -44,9 +43,9 @@ export const projectArray = [
     ],
   },
   {
-    title: "Design und Entwicklung der Website für die vdla drb gewerkschaft",
+    title: "Entwicklung der Website für die vdla drb gewerkschaft",
     shortDesc:
-      "Design und Entwicklung eines eigenen WordPress Themes für die vdla drb gewerkschaft",
+      "Design, Entwicklung und Einrichtung eines eigenen WordPress Themes für die Fachgruppe Bezirksregierung Düsseldorf der vdla gewerkschaft",
     longDesc:
       "Für die Fachgruppe Bezirksregierung Düsseldorf der vdla gewerkschaft (https://vdla-brd.de/) habe ich ein eigenes Wordpress Theme designed und programmiert. Dabei habe ich mich regelmäßig mit dem Vorsitzenden der Fachgruppe ausgetauscht, um sicherzustellen, dass alles den Vorstellungen entspricht und um gegebenenfalls über weitere erwünschte Features zu reden. Zusätzlich habe ich eine schriftliche Einführung in die Nutzung des WordPress Dashboards erstellt, welche auf mein Theme zugeschnitten ist.\nDieses Projekt war etwas herausfordernd, aber auch sehr spannend, da ich erste Erfahrungen darin sammeln konnte, mit einem Kunden über dessen Vorstellungen zu sprechen und diese umzusetzen. Zudem war das Entwickeln und Umsetzen des Designs mit der Berücksichtigung, dass sehr viel davon auch von den Leuten der Gewerkschaft flexibel anpassbar sein soll eine weitere lehrreiche Herausforderung.",
     tags: [
