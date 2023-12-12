@@ -2,7 +2,12 @@ import React from "react";
 import ProjectBox from "./ProjectBox";
 import { projectArray } from "./projectArray";
 
-const ProjectColumn = () => {
+type Props = {
+  activeProject: number | null;
+  handleClick: (projectId: number) => void;
+};
+
+const ProjectColumn = ({ activeProject, handleClick }: Props) => {
   return (
     <div className="ml-[700px] pr-5 pt-20 w-full">
       {/* Headline */}
@@ -14,13 +19,19 @@ const ProjectColumn = () => {
 
       {/* Project Boxes */}
       <div className="flex flex-row flex-wrap justify-evenly mx-4">
-        {projectArray.map(function (data) {
+        {projectArray.map(function (data, index) {
+          let i = index;
+          let active = activeProject === i;
+          index++;
           return (
             <ProjectBox
+              id={i}
               title={data.title}
               key={data.title}
               shortDesc={data.shortDesc}
               skillList={data.tags}
+              active={active}
+              handleClick={handleClick}
             />
           );
         })}
