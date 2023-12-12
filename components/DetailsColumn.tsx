@@ -3,6 +3,7 @@ import SkillsBox from "./SkillsBox";
 import { skillArray, toolsTechArray } from "./skillArrays";
 import classNames from "classnames";
 import ProjectDetails from "./ProjectDetails";
+import { projectArray } from "./projectArray";
 
 type Props = {
   activeProject: number;
@@ -39,18 +40,19 @@ const DetailsColumn = ({ activeProject }: Props) => {
           className={classNames(
             "mt-32 ml-14 absolute text-cBlack h-full w-[550px] font-bold transition-all duration-500",
             {
-              "-translate-y-[100vh]": fadingOut === -1 || fadingIn === -1,
+              "-translate-y-[100vh] translate-x-[100px]":
+                fadingOut === -1 || fadingIn === -1,
             }
           )}
         >
           {/* Intro-Text */}
           <div className="mb-36">
-            <h1 className="text-6xl leading-[80px]">
+            <h1 className="text-6xl leading-[5rem]">
               Hi, ich bin
               <br />
               <span className="text-cPurple">Sabine Kokot</span>,
             </h1>
-            <h2 className="text-5xl leading-[65px]">
+            <h2 className="text-5xl leading-[4rem]">
               Softwareentwicklerin
               <br />
               aus Willich
@@ -72,31 +74,25 @@ const DetailsColumn = ({ activeProject }: Props) => {
         </div>
       )}
 
-      {shown === 0 && (
-        <div
-          className={classNames(
-            "mt-32 ml-14 absolute text-cBlack h-full w-[550px] font-bold transition-all duration-500",
-            {
-              "translate-y-[100vh]": fadingIn === 0 || fadingOut === 0,
-            }
-          )}
-        >
-          <ProjectDetails />
-        </div>
-      )}
-
-      {shown === 1 && (
-        <div
-          className={classNames(
-            "mt-32 ml-14 absolute text-cBlack h-full w-[550px] font-bold transition-all duration-500",
-            {
-              "translate-y-[100vh]": fadingIn === 1 || fadingOut === 1,
-            }
-          )}
-        >
-          <ProjectDetails />
-        </div>
-      )}
+      {projectArray.map(function (data, index) {
+        return (
+          <>
+            {shown === index && (
+              <div
+                className={classNames(
+                  "mt-32 ml-14 absolute text-cBlack h-full w-[500px] transition-all duration-500",
+                  {
+                    "translate-y-[100vh] -translate-x-[100px]":
+                      fadingIn === index || fadingOut === index,
+                  }
+                )}
+              >
+                <ProjectDetails projectData={data} />
+              </div>
+            )}
+          </>
+        );
+      })}
     </div>
   );
 };
