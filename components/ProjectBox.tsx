@@ -22,7 +22,7 @@ const ProjectBox = ({
   return (
     <div
       onClick={() => handleClick(id)}
-      className="relative h-[20rem] w-[26rem] rounded-2xl p-8 mb-6 mx-4 hover:cursor-pointer"
+      className="relative h-[20rem] w-[26rem] rounded-2xl p-8 mb-6 mx-2 hover:cursor-pointer"
     >
       <div
         className={classNames("absolute -inset-px rounded-2xl", {
