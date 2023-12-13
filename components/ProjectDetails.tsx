@@ -15,7 +15,10 @@ const ProjectDetails = ({ projectData }: Props) => {
       <h1 className="text-4xl leading-[3rem] mb-8 font-semibold">
         {projectData.title}
       </h1>
-      <p className="text-xl">{projectData.longDesc}</p>
+      <p
+        className="text-xl [&>a]:text-cPurple [&>a]:font-semibold [&>a:hover]:underline"
+        dangerouslySetInnerHTML={{ __html: projectData.longDesc }}
+      ></p>
     </div>
   );
 };
