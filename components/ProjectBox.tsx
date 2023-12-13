@@ -25,9 +25,13 @@ const ProjectBox = ({
       className="relative h-[20rem] w-[26rem] rounded-2xl p-8 mb-6 mx-2 hover:cursor-pointer"
     >
       <div
-        className={classNames("absolute -inset-px rounded-2xl", {
-          "bg-gradient-to-br from-cYellow to-cPurple": active,
-        })}
+        className={classNames(
+          "absolute opacity-0 -inset-[2px] rounded-2xl transition-all ease-in-out duration-700",
+          {
+            "opacity-100 bg-gradient-to-br from-cYellow to-cPurple shadow-[0_0_16px_0_rgba(252,186,3,0.3)]":
+              active,
+          }
+        )}
       ></div>
       <div
         className="absolute inset-0 bg-cBlack rounded-2xl"
