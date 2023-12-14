@@ -81,6 +81,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
             {socialsArray.map(function (data, index) {
               return (
                 <Link
+                  key={index}
                   className="flex gap-1 items-center"
                   href={data.link}
                   title={data.name}
@@ -99,6 +100,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
           <>
             {shown === index && (
               <div
+                key={index}
                 className={classNames(
                   "yellow-text tall:pt-32 shorter:pt-16 pt-8 ml-14 absolute text-cBlack h-full w-[500px] transition-all duration-500 tall:overflow-y-hidden overflow-y-scroll",
                   {
