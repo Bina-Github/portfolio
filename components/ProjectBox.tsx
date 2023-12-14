@@ -22,7 +22,7 @@ const ProjectBox = ({
   return (
     <div
       onClick={() => handleClick(id)}
-      className="relative h-[20rem] w-[26rem] rounded-2xl p-8 mb-6 mx-2 hover:cursor-pointer"
+      className="group relative h-[22rem] w-[26rem] rounded-2xl p-8 mb-6 mx-2 hover:cursor-pointer"
     >
       <div
         className={classNames(
@@ -44,7 +44,19 @@ const ProjectBox = ({
 
         <div className="h-0.5 bg-white my-2"></div>
 
-        <p className="text-lg mb-4">{shortDesc}</p>
+        <p className="text-lg">{shortDesc}</p>
+
+        {active && (
+          <p className="group-hover:underline opacity-90 text-lg mb-4 text-cYellow">
+            &gt; Weniger anzeigen
+          </p>
+        )}
+
+        {!active && (
+          <p className="group-hover:underline opacity-90 text-lg mb-4 text-cYellow">
+            &gt; Mehr Infos
+          </p>
+        )}
 
         <SkillsBox skillList={skillList} className="bg-cGray text-sm" />
       </div>
