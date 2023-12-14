@@ -11,7 +11,7 @@ const ProjectColumn = ({ activeProject, handleClick }: Props) => {
   return (
     <div className="ml-[700px] pr-5 pt-20 w-full">
       {/* Headline */}
-      <div className="flex flex-row items-center justify-center mb-24">
+      <div className="flex flex-row items-center justify-center mb-16">
         <div className="h-0.5 grow bg-gradient-to-r from-cPurple to-cYellow"></div>
         <h1 className="text-cYellow mx-3 text-3xl">Ausbildung & Projekte</h1>
         <div className="h-0.5 grow bg-gradient-to-l from-cPurple to-cYellow"></div>
