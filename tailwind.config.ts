@@ -21,6 +21,10 @@ const config: Config = {
         cWhite: "var(--cWhite)",
         cDark: "var(--cDark)",
       },
+      screens: {
+        tall: { raw: "(min-height: 1000px)" },
+        shorter: { raw: "(min-height: 800px) and (max-height: 999px)" },
+      },
     },
   },
   plugins: [],

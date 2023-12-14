@@ -38,7 +38,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
       {shown === -1 && (
         <div
           className={classNames(
-            "mt-32 ml-14 absolute text-cBlack h-full w-[550px] font-bold transition-all duration-500",
+            "yellow-text tall:pt-32 shorter:pt-16 pt-8  ml-14 absolute text-cBlack h-full w-[550px] font-bold transition-all duration-500 tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
             {
               "-translate-y-[100vh] translate-x-[100px]":
                 fadingOut === -1 || fadingIn === -1,
@@ -46,13 +46,13 @@ const DetailsColumn = ({ activeProject }: Props) => {
           )}
         >
           {/* Intro-Text */}
-          <div className="mb-36">
-            <h1 className="text-6xl leading-[5rem]">
+          <div className="tall:pb-36 shorter:pb-20 pb-12">
+            <h1 className="tall:text-6xl shorter:text-6xl text-5xl tall:leading-[5rem] shorter:leading-[5rem] leading-[4rem]">
               Hi, ich bin
               <br />
               <span className="text-cPurple">Sabine Kokot</span>,
             </h1>
-            <h2 className="text-5xl leading-[4rem]">
+            <h2 className="tall:text-5xl shorter:text-5xl text-4xl tall:leading-[4rem] shorter:leading-[4rem] leading-[3rem]">
               Softwareentwicklerin
               <br />
               aus Willich
@@ -80,7 +80,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
             {shown === index && (
               <div
                 className={classNames(
-                  "mt-32 ml-14 absolute text-cBlack h-full w-[500px] transition-all duration-500",
+                  "yellow-text tall:pt-32 shorter:pt-16 pt-8 ml-14 absolute text-cBlack h-full w-[500px] transition-all duration-500 tall:overflow-y-hidden overflow-y-scroll",
                   {
                     "translate-y-[100vh] -translate-x-[100px]":
                       fadingIn === index || fadingOut === index,
