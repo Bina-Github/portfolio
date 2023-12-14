@@ -40,7 +40,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
       {shown === -1 && (
         <div
           className={classNames(
-            "flex flex-col justify-between yellow-text tall:pt-32 shorter:pt-16 pt-8  ml-14 absolute text-cBlack h-full w-[550px] font-bold transition-all duration-500 tall:overflow-y-clip shorter:overflow-y-clip overflow-y-scroll",
+            "flex flex-col justify-between yellow-text tall:pt-32 shorter:pt-16 pt-8  ml-14 absolute text-cBlack h-full w-[550px] font-bold transition-all duration-500 tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
             {
               "-translate-y-[100vh] translate-x-[100px]":
                 fadingOut === -1 || fadingIn === -1,

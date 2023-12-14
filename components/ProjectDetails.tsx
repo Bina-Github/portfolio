@@ -20,7 +20,7 @@ const ProjectDetails = ({ projectData }: Props) => {
         {projectData.time}
       </p>
       <p
-        className="text-xl [&>a]:text-cPurple [&>a]:font-semibold [&>a:hover]:underline"
+        className="text-xl [&>a]:text-cPurple [&>a]:font-semibold [&>a]:underline [&>a:hover]:text-cBlack"
         dangerouslySetInnerHTML={{ __html: projectData.longDesc }}
       ></p>
     </div>
