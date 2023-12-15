@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      <div className="relative mx-auto pb-28 max-w-[2000px] flex flex-row">
+      <div className="relative mx-auto pb-28 max-w-[2000px] flex md:flex-row flex-col">
         <DetailsColumn activeProject={activeProject} />
         <ProjectColumn
           activeProject={activeProject}

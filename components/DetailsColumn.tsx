@@ -41,13 +41,13 @@ const DetailsColumn = ({ activeProject }: Props) => {
   }, [activeProject]);
 
   return (
-    <div className="md:h-screen md:w-0 w-full fixed z-10">
-      <div className="md:bg-cYellow h-full lg:w-[620px] md:w-[420px] w-screen absolute md:-skew-x-[5deg] md:-inset-x-[80px]"></div>
+    <div className="md:h-screen md:w-0 w-full md:fixed z-10">
+      <div className="md:bg-cYellow md:h-full h-0 lg:w-[620px] md:w-[420px] w-screen absolute md:-skew-x-[5deg] md:-inset-x-[80px]"></div>
 
       {shown === -1 && (
         <div
           className={classNames(
-            "md:bg-transparent bg-cYellow flex flex-col justify-between yellow-text tall:pt-28 shorter:pt-16 short:pt-8 pt-8 wide:pl-2 lg:pl-10 pl-8 absolute text-cBlack md:h-full lg:w-[550px] md:w-[350px] w-full font-bold transition-transform duration-500 tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
+            "md:bg-transparent bg-cYellow flex flex-col justify-between yellow-text tall:pt-28 shorter:pt-16 short:pt-8 pt-8 wide:pl-2 lg:pl-10 pl-8 md:absolute relative text-cBlack md:h-full lg:w-[550px] md:w-[350px] w-full font-bold transition-transform duration-500 tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
             {
               "-translate-y-[100vh] translate-x-[100px]":
                 fadingOut === -1 || fadingIn === -1,

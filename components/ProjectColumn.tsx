@@ -9,7 +9,7 @@ type Props = {
 
 const ProjectColumn = ({ activeProject, handleClick }: Props) => {
   return (
-    <div className="lg:ml-[600px] ml-[400px] pr-5 pt-14 w-full">
+    <div className="lg:ml-[600px] md:ml-[400px] md:pr-5 md:pl-0 px-6 pt-14 w-full">
       {/* Headline */}
       <div className="flex flex-row items-center justify-center mb-14">
         <div className="h-0.5 grow bg-gradient-to-r from-cPurple to-cYellow"></div>
@@ -20,7 +20,7 @@ const ProjectColumn = ({ activeProject, handleClick }: Props) => {
       </div>
 
       {/* Project Boxes */}
-      <div className="flex flex-row flex-wrap justify-evenly mx-4">
+      <div className="flex flex-row gap-6 flex-wrap justify-evenly">
         {projectArray.map(function (data, index) {
           let i = index;
           let active = activeProject === i;
