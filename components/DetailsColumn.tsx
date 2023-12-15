@@ -42,12 +42,12 @@ const DetailsColumn = ({ activeProject }: Props) => {
 
   return (
     <div className="h-screen fixed z-10">
-      <div className="bg-cYellow h-full w-[700px] absolute -skew-x-[5deg] -inset-x-[80px]"></div>
+      <div className="bg-cYellow h-full w-[620px] absolute -skew-x-[5deg] -inset-x-[80px]"></div>
 
       {shown === -1 && (
         <div
           className={classNames(
-            "flex flex-col justify-between yellow-text tall:pt-32 shorter:pt-16 pt-8  ml-14 absolute text-cBlack h-full w-[550px] font-bold transition-all duration-500 tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
+            "flex flex-col justify-between yellow-text tall:pt-28 shorter:pt-16 pt-8  pl-10 absolute text-cBlack h-full w-[550px] font-bold transition-all duration-500 tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
             {
               "-translate-y-[100vh] translate-x-[100px]":
                 fadingOut === -1 || fadingIn === -1,
@@ -56,7 +56,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
         >
           <div>
             {/* Intro-Text */}
-            <div className="tall:pb-36 shorter:pb-12 pb-12">
+            <div className="tall:pb-32 shorter:pb-12 pb-12">
               <h1 className="tall:text-6xl shorter:text-6xl text-5xl tall:leading-[5rem] shorter:leading-[5rem] leading-[4rem]">
                 Hi, ich bin
                 <br />
@@ -69,7 +69,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
               </h2>
             </div>
             {/* Skill, Tool, Tech Auflistungen */}
-            <div className="flex flex-col gap-12 pb-6">
+            <div className="flex flex-col gap-12 pb-6 w-[450px]">
               <SkillsBox
                 title="Skills"
                 skillList={skillArray}
@@ -84,7 +84,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
           </div>
 
           {/* Socials */}
-          <div className="flex gap-3 pt-4 pb-4 text-cGray text-md">
+          <div className="flex gap-3 flex-wrap pt-4 pb-4 -ml-3 text-cGray text-md w-[500px] whitespace-nowrap">
             <button
               onClick={handleMailButtonClick}
               className="flex gap-1 items-center"
@@ -124,7 +124,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
               <div
                 key={index}
                 className={classNames(
-                  "yellow-text tall:pt-32 shorter:pt-16 pt-8 ml-14 absolute text-cBlack h-full w-[500px] transition-all duration-500 tall:overflow-y-hidden overflow-y-scroll",
+                  "yellow-text tall:pt-28 shorter:pt-10 pt-8 pb-4 pl-10 absolute text-cBlack h-full w-[480px] transition-all duration-500 tall:overflow-y-hidden overflow-y-scroll",
                   {
                     "translate-y-[100vh] -translate-x-[100px]":
                       fadingIn === index || fadingOut === index,

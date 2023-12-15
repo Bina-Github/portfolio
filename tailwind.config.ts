@@ -22,8 +22,8 @@ const config: Config = {
         cDark: "var(--cDark)",
       },
       screens: {
-        tall: { raw: "(min-height: 1000px)" },
-        shorter: { raw: "(min-height: 800px) and (max-height: 999px)" },
+        tall: { raw: "(min-height: 1100px)" },
+        shorter: { raw: "(min-height: 900px) and (max-height: 1099px)" },
       },
     },
   },

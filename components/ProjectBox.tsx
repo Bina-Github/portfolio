@@ -22,7 +22,7 @@ const ProjectBox = ({
   return (
     <div
       onClick={() => handleClick(id)}
-      className="group relative h-[22rem] w-[26rem] rounded-2xl p-8 mb-6 mx-2 hover:cursor-pointer"
+      className="group relative h-[20rem] w-[32rem] rounded-2xl p-8 mb-4 mx-2 hover:cursor-pointer"
     >
       <div
         className={classNames(
