@@ -22,7 +22,7 @@ const ProjectBox = ({
   return (
     <div
       onClick={() => handleClick(id)}
-      className="group relative lg:h-[20rem] h-[25rem] lg:w-[32rem] w-[20rem] lg:ml-0 -ml-4  rounded-2xl p-8 mb-4 mx-2 hover:cursor-pointer"
+      className="group relative lg:h-[20rem] h-[22rem] lg:w-[32rem] w-[20rem] lg:ml-0 -ml-4  rounded-2xl lg:p-8 p-4 mb-4 mx-2 hover:cursor-pointer"
     >
       <div
         className={classNames(
@@ -38,7 +38,7 @@ const ProjectBox = ({
         aria-hidden="true"
       ></div>
       <div className="relative text-white flex flex-col">
-        <div className="flex items-end lg:text-2xl text-xl font-medium lg:h-[2lh] md:h-[3lh]">
+        <div className="flex items-end lg:text-2xl text-lg font-medium h-[2lh]">
           <h2>{title}</h2>
         </div>
 

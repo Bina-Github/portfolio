@@ -9,7 +9,9 @@ type Props = ComponentPropsWithoutRef<"div"> & {
 const SkillsBox = ({ title, skillList, className }: Props) => {
   return (
     <div>
-      {title && <h3 className="lg:text-2xl text-xl mb-2">{title}</h3>}
+      {title && (
+        <h3 className="lg:text-2xl md:text-xl text-lg md:mb-2">{title}</h3>
+      )}
       <div className="flex flex-wrap gap-2">
         {skillList.map(function (data) {
           return (

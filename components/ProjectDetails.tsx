@@ -13,7 +13,7 @@ type Props = {
 const ProjectDetails = ({ projectData }: Props) => {
   return (
     <div>
-      <h1 className="lg:text-4xl text-3xl lg:leading-[3rem] leading-[2rem] font-semibold">
+      <h1 className="lg:text-4xl text-2xl lg:leading-[3rem] leading-[2rem] font-semibold">
         {projectData.title}
       </h1>
       <p className="lg:my-4 my-2 lg:text-lg text-base text-cGray font-semibold">

@@ -41,13 +41,13 @@ const DetailsColumn = ({ activeProject }: Props) => {
   }, [activeProject]);
 
   return (
-    <div className="h-screen fixed z-10">
-      <div className="bg-cYellow h-full lg:w-[620px] md:w-[420px] w-2 absolute -skew-x-[5deg] -inset-x-[80px]"></div>
+    <div className="md:h-screen md:w-0 w-full fixed z-10">
+      <div className="md:bg-cYellow h-full lg:w-[620px] md:w-[420px] w-screen absolute md:-skew-x-[5deg] md:-inset-x-[80px]"></div>
 
       {shown === -1 && (
         <div
           className={classNames(
-            "flex flex-col justify-between yellow-text tall:pt-28 shorter:pt-16 short:pt-8 pt-8 wide:pl-2 lg:pl-10 pl-8 absolute text-cBlack h-full lg:w-[550px] md:w-[350px] font-bold transition-all duration-500 tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
+            "md:bg-transparent bg-cYellow flex flex-col justify-between yellow-text tall:pt-28 shorter:pt-16 short:pt-8 pt-8 wide:pl-2 lg:pl-10 pl-8 absolute text-cBlack md:h-full lg:w-[550px] md:w-[350px] w-full font-bold transition-transform duration-500 tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
             {
               "-translate-y-[100vh] translate-x-[100px]":
                 fadingOut === -1 || fadingIn === -1,
@@ -57,7 +57,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
           <div>
             {/* Intro-Text */}
             <div className="tall:pb-32 shorter:pb-12 short:pb-12 pb-8">
-              <h1 className="tall:text-6xl shorter:text-6xl short:text-5xl text-4xl tall:leading-[5rem] shorter:leading-[5rem] short:leading-[4rem] leading-[3rem]">
+              <h1 className="tall:text-6xl shorter:text-6xl short:text-5xl text-3xl tall:leading-[5rem] shorter:leading-[5rem] short:leading-[4rem] leading-[2rem]">
                 Hi, ich bin
                 <br />
                 <span className="text-cPurple">Sabine Kokot</span>,
@@ -69,7 +69,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
               </h2>
             </div>
             {/* Skill, Tool, Tech Auflistungen */}
-            <div className="flex flex-col gap-12 pb-6 lg:w-[450px] w-[280px]">
+            <div className="flex flex-col gap-12 pb-6 lg:w-[450px] md:w-[280px] w-full">
               <SkillsBox
                 title="Skills"
                 skillList={skillArray}
@@ -124,7 +124,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
               <div
                 key={index}
                 className={classNames(
-                  "yellow-text tall:pt-28 shorter:pt-10 short:pt-8 pt-8 pb-4 wide:pl-2 lg:pl-10 pl-8 absolute text-cBlack h-full lg:w-[480px] md:w-[300px] transition-all duration-500 tall:overflow-y-hidden overflow-y-scroll",
+                  "yellow-text tall:pt-28 shorter:pt-10 short:pt-8 pt-8 pb-4 wide:pl-2 lg:pl-10 pl-8 absolute text-cBlack h-full lg:w-[480px] md:w-[300px] transition-transform duration-500 tall:overflow-y-hidden overflow-y-scroll",
                   {
                     "translate-y-[100vh] -translate-x-[100px]":
                       fadingIn === index || fadingOut === index,
