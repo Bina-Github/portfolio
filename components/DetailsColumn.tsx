@@ -11,6 +11,13 @@ type Props = {
   activeProject: number;
 };
 
+const handleMailButtonClick: React.MouseEventHandler = (e) => {
+  e.preventDefault();
+  window.location.href = `mailto:${atob(
+    "c2FiaW5la29rb3QxOTk4QGdtYWlsLmNvbQ=="
+  )}`;
+};
+
 const DetailsColumn = ({ activeProject }: Props) => {
   const [isFirstRender, setIsFirstRender] = useState(true);
   const [shown, setShown] = useState(-1);
@@ -78,6 +85,21 @@ const DetailsColumn = ({ activeProject }: Props) => {
 
           {/* Socials */}
           <div className="flex gap-3 pt-4 pb-4 text-cGray text-md">
+            <button
+              onClick={handleMailButtonClick}
+              className="flex gap-1 items-center"
+              title="E-Mail"
+            >
+              <svg
+                fill="var(--cGray)"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22 5v4l-10 4L2 9V5a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1zM2 11.154V19a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-7.846l-10 4z" />
+              </svg>
+              E-Mail
+            </button>
             {socialsArray.map(function (data, index) {
               return (
                 <Link
