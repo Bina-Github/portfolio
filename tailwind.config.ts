@@ -7,6 +7,22 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1200px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1280px",
+      // => @media (min-width: 1280px) { ... }
+
+      "2xl": "1536px",
+      // => @media (min-width: 1536px) { ... }
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -22,8 +38,13 @@ const config: Config = {
         cDark: "var(--cDark)",
       },
       screens: {
-        tall: { raw: "(min-height: 1100px)" },
-        shorter: { raw: "(min-height: 900px) and (max-height: 1099px)" },
+        tall: { raw: "(min-height: 1100px) and (min-width: 1200px)" },
+        shorter: {
+          raw: "(min-height: 900px) and (max-height: 1099px) and (min-width: 1200px)",
+        },
+        short: {
+          raw: "(max-height: 899px) and (min-width: 1200px)",
+        },
         wide: "2060px",
       },
     },

@@ -13,14 +13,14 @@ type Props = {
 const ProjectDetails = ({ projectData }: Props) => {
   return (
     <div>
-      <h1 className="text-4xl leading-[3rem] mb-4 font-semibold">
+      <h1 className="lg:text-4xl text-3xl lg:leading-[3rem] leading-[2rem] font-semibold">
         {projectData.title}
       </h1>
-      <p className="mb-4 text-lg text-cGray font-semibold">
+      <p className="lg:my-4 my-2 lg:text-lg text-base text-cGray font-semibold">
         {projectData.time}
       </p>
       <p
-        className="text-xl [&>a]:text-cPurple [&>a]:font-semibold [&>a]:underline [&>a:hover]:text-cBlack"
+        className="lg:text-xl text-base [&>a]:text-cPurple [&>a]:font-semibold [&>a]:underline [&>a:hover]:text-cBlack"
         dangerouslySetInnerHTML={{ __html: projectData.longDesc }}
       ></p>
     </div>
