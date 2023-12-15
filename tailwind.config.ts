@@ -24,6 +24,7 @@ const config: Config = {
       screens: {
         tall: { raw: "(min-height: 1100px)" },
         shorter: { raw: "(min-height: 900px) and (max-height: 1099px)" },
+        wide: "2060px",
       },
     },
   },
