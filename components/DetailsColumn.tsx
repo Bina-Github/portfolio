@@ -84,7 +84,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
           </div>
 
           {/* Socials */}
-          <div className="flex gap-3 flex-wrap pt-4 pb-4 -ml-3 text-cGray text-md lg:w-[500px] w-[270px] whitespace-nowrap">
+          <div className="flex gap-3 flex-wrap pt-4 pb-4 -ml-3 text-cGray text-md lg:w-[500px] md:w-[270px] whitespace-nowrap">
             <button
               onClick={handleMailButtonClick}
               className="flex gap-1 items-center"
