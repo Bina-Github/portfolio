@@ -53,7 +53,7 @@ const ProjectBox = ({
         )}
 
         {!active && (
-          <p className="group-hover:underline opacity-90 text-lg mb-4 text-cYellow">
+          <p className="group-hover:underline opacity-90 lg:text-lg text-base mb-4 text-cYellow">
             &gt; Mehr Infos
           </p>
         )}
