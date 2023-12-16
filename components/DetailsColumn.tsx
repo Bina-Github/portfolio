@@ -47,14 +47,18 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
     (_data, index) => shown === index
   );
 
+  const detailsColumnTextClasses =
+    "yellow-text wide:pl-2 lg:pl-10 pl-8 text-cBlack transition-transform duration-500";
+
   return (
     <div className="md:h-screen md:w-0 w-full md:fixed z-10">
       <div className="md:bg-cYellow md:h-full h-0 lg:w-[620px] md:w-[420px] w-screen absolute md:-skew-x-[5deg] md:-inset-x-[80px]"></div>
 
-      {shown === -1 && (
+      {(shown === -1 || !shouldAnimate) && (
         <div
           className={classNames(
-            "md:bg-transparent bg-cYellow flex flex-col justify-between yellow-text tall:pt-28 shorter:pt-16 short:pt-8 pt-8 wide:pl-2 lg:pl-10 pl-8 md:absolute relative text-cBlack md:h-full lg:w-[550px] md:w-[350px] w-full font-bold transition-transform duration-500 tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
+            "md:bg-transparent bg-cYellow flex flex-col justify-between tall:pt-28 shorter:pt-16 short:pt-8 pt-8 md:absolute relative md:h-full md:min-h-0 min-h-[500px] lg:w-[550px] md:w-[350px] w-full font-bold tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
+            detailsColumnTextClasses,
             {
               "-translate-y-[100vh] translate-x-[100px]":
                 fadingOut === -1 || fadingIn === -1,
@@ -127,7 +131,8 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
       {activeProjectDetails && (
         <div
           className={classNames(
-            "md:block hidden yellow-text tall:pt-28 shorter:pt-10 short:pt-8 pt-8 pb-4 wide:pl-2 lg:pl-10 pl-8 absolute text-cBlack h-full lg:w-[480px] md:w-[300px] transition-transform duration-500 tall:overflow-y-hidden overflow-y-scroll",
+            "md:block hidden tall:pt-28 shorter:pt-10 short:pt-8 pt-8 pb-4 absolute h-full lg:w-[480px] md:w-[300px] tall:overflow-y-hidden overflow-y-scroll",
+            detailsColumnTextClasses,
             {
               "translate-y-[100vh] -translate-x-[100px]":
                 fadingIn === shown || fadingOut === shown,
