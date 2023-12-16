@@ -40,6 +40,10 @@ const DetailsColumn = ({ activeProject }: Props) => {
     }
   }, [activeProject]);
 
+  const activeProjectDetails = projectArray.find(
+    (_data, index) => shown === index
+  );
+
   return (
     <div className="md:h-screen md:w-0 w-full md:fixed z-10">
       <div className="md:bg-cYellow md:h-full h-0 lg:w-[620px] md:w-[420px] w-screen absolute md:-skew-x-[5deg] md:-inset-x-[80px]"></div>
@@ -103,7 +107,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
             {socialsArray.map(function (data, index) {
               return (
                 <Link
-                  key={index}
+                  key={"socials" + index}
                   className="flex gap-1 items-center"
                   href={data.link}
                   title={data.name}
@@ -117,26 +121,19 @@ const DetailsColumn = ({ activeProject }: Props) => {
       )}
 
       {/* Texte zu den Projekten */}
-      {projectArray.map(function (data, index) {
-        return (
-          <>
-            {shown === index && (
-              <div
-                key={index}
-                className={classNames(
-                  "yellow-text tall:pt-28 shorter:pt-10 short:pt-8 pt-8 pb-4 wide:pl-2 lg:pl-10 pl-8 absolute text-cBlack h-full lg:w-[480px] md:w-[300px] transition-transform duration-500 tall:overflow-y-hidden overflow-y-scroll",
-                  {
-                    "translate-y-[100vh] -translate-x-[100px]":
-                      fadingIn === index || fadingOut === index,
-                  }
-                )}
-              >
-                <ProjectDetails projectData={data} />
-              </div>
-            )}
-          </>
-        );
-      })}
+      {activeProjectDetails && (
+        <div
+          className={classNames(
+            "yellow-text tall:pt-28 shorter:pt-10 short:pt-8 pt-8 pb-4 wide:pl-2 lg:pl-10 pl-8 absolute text-cBlack h-full lg:w-[480px] md:w-[300px] transition-transform duration-500 tall:overflow-y-hidden overflow-y-scroll",
+            {
+              "translate-y-[100vh] -translate-x-[100px]":
+                fadingIn === shown || fadingOut === shown,
+            }
+          )}
+        >
+          <ProjectDetails projectData={activeProjectDetails} />
+        </div>
+      )}
     </div>
   );
 };

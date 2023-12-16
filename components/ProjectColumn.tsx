@@ -29,7 +29,7 @@ const ProjectColumn = ({ activeProject, handleClick }: Props) => {
             <ProjectBox
               id={i}
               title={data.title}
-              key={data.title}
+              key={"projectBox" + index}
               shortDesc={data.shortDesc}
               skillList={data.tags}
               active={active}

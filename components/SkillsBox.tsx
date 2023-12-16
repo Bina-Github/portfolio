@@ -13,12 +13,12 @@ const SkillsBox = ({ title, skillList, className }: Props) => {
         <h3 className="lg:text-2xl md:text-xl text-lg md:mb-2">{title}</h3>
       )}
       <div className="flex flex-wrap gap-2">
-        {skillList.map(function (data) {
+        {skillList.map(function (data, index) {
           return (
             <SkillTag
               name={data.name}
               svg={data.svg}
-              key={data.name}
+              key={index}
               className={className}
             />
           );
