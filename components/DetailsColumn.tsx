@@ -9,6 +9,7 @@ import Link from "next/link";
 
 type Props = {
   activeProject: number;
+  shouldAnimate: boolean;
 };
 
 const handleMailButtonClick: React.MouseEventHandler = (e) => {
@@ -18,14 +19,14 @@ const handleMailButtonClick: React.MouseEventHandler = (e) => {
   )}`;
 };
 
-const DetailsColumn = ({ activeProject }: Props) => {
+const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
   const [isFirstRender, setIsFirstRender] = useState(true);
   const [shown, setShown] = useState(-1);
   const [fadingOut, setFadingOut] = useState<number | null>(null);
   const [fadingIn, setFadingIn] = useState<number | null>(null);
 
   useEffect(() => {
-    if (!isFirstRender) {
+    if (!isFirstRender && shouldAnimate) {
       setFadingOut(shown);
       setFadingIn(activeProject);
       setTimeout(() => {
@@ -35,6 +36,8 @@ const DetailsColumn = ({ activeProject }: Props) => {
           setFadingIn(null);
         }, 10);
       }, 500);
+    } else if (!isFirstRender && !shouldAnimate) {
+      setShown(activeProject);
     } else {
       setIsFirstRender(false);
     }
@@ -124,7 +127,7 @@ const DetailsColumn = ({ activeProject }: Props) => {
       {activeProjectDetails && (
         <div
           className={classNames(
-            "yellow-text tall:pt-28 shorter:pt-10 short:pt-8 pt-8 pb-4 wide:pl-2 lg:pl-10 pl-8 absolute text-cBlack h-full lg:w-[480px] md:w-[300px] transition-transform duration-500 tall:overflow-y-hidden overflow-y-scroll",
+            "md:block hidden yellow-text tall:pt-28 shorter:pt-10 short:pt-8 pt-8 pb-4 wide:pl-2 lg:pl-10 pl-8 absolute text-cBlack h-full lg:w-[480px] md:w-[300px] transition-transform duration-500 tall:overflow-y-hidden overflow-y-scroll",
             {
               "translate-y-[100vh] -translate-x-[100px]":
                 fadingIn === shown || fadingOut === shown,
