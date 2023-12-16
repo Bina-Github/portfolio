@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format:fix": "prettier --write {app,components}/**/*.{js,jsx,ts,tsx}"
   },
   "dependencies": {
     "classnames": "^2.3.2",

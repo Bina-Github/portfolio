@@ -1,0 +1,8 @@
+{
+    "filepath": "app/**/*.{js,jsx,ts,tsx}",
+    "singleQuote": true,
+    "trailingComma": "none",
+    "semi": false,
+    "printWidth": 100,
+    "plugins": ["prettier-plugin-tailwindcss"]
+  }

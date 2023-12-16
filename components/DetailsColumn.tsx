@@ -1,112 +1,102 @@
-import React, { useEffect, useState } from "react";
-import SkillsBox from "./SkillsBox";
-import { skillArray, toolsTechArray } from "./skillArrays";
-import classNames from "classnames";
-import ProjectDetails from "./ProjectDetails";
-import { projectArray } from "./projectArray";
-import { socialsArray } from "./socialsArray";
-import Link from "next/link";
+import React, { useEffect, useState } from 'react'
+import SkillsBox from './SkillsBox'
+import { skillArray, toolsTechArray } from './skillArrays'
+import classNames from 'classnames'
+import ProjectDetails from './ProjectDetails'
+import { projectArray } from './projectArray'
+import { socialsArray } from './socialsArray'
+import Link from 'next/link'
 
 type Props = {
-  activeProject: number;
-  shouldAnimate: boolean;
-};
+  activeProject: number
+  shouldAnimate: boolean
+}
 
 const handleMailButtonClick: React.MouseEventHandler = (e) => {
-  e.preventDefault();
-  window.location.href = `mailto:${atob(
-    "c2FiaW5la29rb3QxOTk4QGdtYWlsLmNvbQ=="
-  )}`;
-};
+  e.preventDefault()
+  window.location.href = `mailto:${atob('c2FiaW5la29rb3QxOTk4QGdtYWlsLmNvbQ==')}`
+}
 
 const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
-  const [isFirstRender, setIsFirstRender] = useState(true);
-  const [shown, setShown] = useState(-1);
-  const [fadingOut, setFadingOut] = useState<number | null>(null);
-  const [fadingIn, setFadingIn] = useState<number | null>(null);
+  const [isFirstRender, setIsFirstRender] = useState(true)
+  const [shown, setShown] = useState(-1)
+  const [fadingOut, setFadingOut] = useState<number | null>(null)
+  const [fadingIn, setFadingIn] = useState<number | null>(null)
 
   useEffect(() => {
     if (!isFirstRender && shouldAnimate) {
-      setFadingOut(shown);
-      setFadingIn(activeProject);
+      setFadingOut(shown)
+      setFadingIn(activeProject)
       setTimeout(() => {
-        setShown(activeProject);
+        setShown(activeProject)
         setTimeout(() => {
-          setFadingOut(null);
-          setFadingIn(null);
-        }, 10);
-      }, 500);
+          setFadingOut(null)
+          setFadingIn(null)
+        }, 10)
+      }, 500)
     } else if (!isFirstRender && !shouldAnimate) {
-      setShown(activeProject);
+      setShown(activeProject)
     } else {
-      setIsFirstRender(false);
+      setIsFirstRender(false)
     }
-  }, [activeProject]);
+  }, [activeProject])
 
-  const activeProjectDetails = projectArray.find(
-    (_data, index) => shown === index
-  );
+  const activeProjectDetails = projectArray.find((_data, index) => shown === index)
 
   const detailsColumnTextClasses =
-    "yellow-text wide:pl-2 lg:pl-10 pl-8 text-cBlack transition-transform duration-500";
+    'yellow-text wide:pl-2 lg:pl-10 pl-8 text-cBlack transition-transform duration-500'
 
   return (
-    <div className="md:h-screen md:w-0 w-full md:fixed z-10">
-      <div className="md:bg-cYellow md:h-full h-0 lg:w-[620px] md:w-[420px] w-screen absolute md:-skew-x-[5deg] md:-inset-x-[80px]"></div>
+    <div className="z-10 w-full md:fixed md:h-screen md:w-0">
+      <div className="absolute h-0 w-screen md:-inset-x-[80px] md:h-full md:w-[420px] md:-skew-x-[5deg] md:bg-cYellow lg:w-[620px]"></div>
 
       {(shown === -1 || !shouldAnimate) && (
         <div
           className={classNames(
-            "md:bg-transparent bg-cYellow flex flex-col justify-between tall:pt-28 shorter:pt-16 short:pt-8 pt-8 md:absolute relative md:h-full md:min-h-0 min-h-[500px] lg:w-[550px] md:w-[350px] w-full font-bold tall:overflow-y-hidden shorter:overflow-y-hidden overflow-y-scroll",
+            'relative flex min-h-[500px] w-full flex-col justify-between overflow-y-scroll bg-cYellow pt-8 font-bold md:absolute md:h-full md:min-h-0 md:w-[350px] md:bg-transparent lg:w-[550px] tall:overflow-y-hidden tall:pt-28 shorter:overflow-y-hidden shorter:pt-16 short:pt-8',
             detailsColumnTextClasses,
             {
-              "-translate-y-[100vh] translate-x-[100px]":
-                fadingOut === -1 || fadingIn === -1,
+              '-translate-y-[100vh] translate-x-[100px]': fadingOut === -1 || fadingIn === -1
             }
           )}
         >
           <div>
             {/* Intro-Text */}
-            <div className="tall:pb-32 shorter:pb-12 short:pb-12 pb-8">
-              <h1 className="tall:text-6xl shorter:text-6xl short:text-5xl text-3xl tall:leading-[5rem] shorter:leading-[5rem] short:leading-[4rem] leading-[2rem]">
+            <div className="pb-8 tall:pb-32 shorter:pb-12 short:pb-12">
+              <h1 className="text-3xl leading-[2rem] tall:text-6xl tall:leading-[5rem] shorter:text-6xl shorter:leading-[5rem] short:text-5xl short:leading-[4rem]">
                 Hi, ich bin
                 <br />
                 <span className="text-cPurple">Sabine Kokot</span>,
               </h1>
-              <h2 className="tall:text-5xl shorter:text-5xl short:text-4xl text-3xl tall:leading-[4rem] shorter:leading-[4rem] short:leading-[3rem] leading-[2rem]">
+              <h2 className="text-3xl leading-[2rem] tall:text-5xl tall:leading-[4rem] shorter:text-5xl shorter:leading-[4rem] short:text-4xl short:leading-[3rem]">
                 Softwareentwicklerin
                 <br />
                 aus Willich
               </h2>
             </div>
             {/* Skill, Tool, Tech Auflistungen */}
-            <div className="flex flex-col gap-12 pb-6 lg:w-[450px] md:w-[280px] w-full">
+            <div className="flex w-full flex-col gap-12 pb-6 md:w-[280px] lg:w-[450px]">
               <SkillsBox
                 title="Skills"
                 skillList={skillArray}
-                className="bg-cGray lg:text-base text-sm"
+                className="bg-cGray text-sm lg:text-base"
               />
               <SkillsBox
                 title="Tools & Technologien"
                 skillList={toolsTechArray}
-                className="bg-cGray lg:text-base text-sm"
+                className="bg-cGray text-sm lg:text-base"
               />
             </div>
           </div>
 
           {/* Socials */}
-          <div className="flex gap-3 flex-wrap pt-4 pb-4 -ml-3 text-cGray text-md lg:w-[500px] md:w-[270px] whitespace-nowrap">
+          <div className="text-md -ml-3 flex flex-wrap gap-3 whitespace-nowrap pb-4 pt-4 text-cGray md:w-[270px] lg:w-[500px]">
             <button
               onClick={handleMailButtonClick}
-              className="flex gap-1 items-center"
+              className="flex items-center gap-1"
               title="E-Mail"
             >
-              <svg
-                fill="var(--cGray)"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
+              <svg fill="var(--cGray)" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M22 5v4l-10 4L2 9V5a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1zM2 11.154V19a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-7.846l-10 4z" />
               </svg>
               E-Mail
@@ -114,14 +104,14 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
             {socialsArray.map(function (data, index) {
               return (
                 <Link
-                  key={"socials" + index}
-                  className="flex gap-1 items-center"
+                  key={'socials' + index}
+                  className="flex items-center gap-1"
                   href={data.link}
                   title={data.name}
                   target="_blank"
                   dangerouslySetInnerHTML={{ __html: data.svg + data.name }}
                 ></Link>
-              );
+              )
             })}
           </div>
         </div>
@@ -131,11 +121,10 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
       {activeProjectDetails && (
         <div
           className={classNames(
-            "md:block hidden tall:pt-28 shorter:pt-10 short:pt-8 pt-8 pb-4 absolute h-full lg:w-[480px] md:w-[300px] tall:overflow-y-hidden overflow-y-scroll",
+            'absolute hidden h-full overflow-y-scroll pb-4 pt-8 md:block md:w-[300px] lg:w-[480px] tall:overflow-y-hidden tall:pt-28 shorter:pt-10 short:pt-8',
             detailsColumnTextClasses,
             {
-              "translate-y-[100vh] -translate-x-[100px]":
-                fadingIn === shown || fadingOut === shown,
+              '-translate-x-[100px] translate-y-[100vh]': fadingIn === shown || fadingOut === shown
             }
           )}
         >
@@ -143,7 +132,7 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default DetailsColumn;
+export default DetailsColumn

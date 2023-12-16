@@ -1,30 +1,30 @@
-import React from "react";
+import React from 'react'
 
 type Props = {
   projectData: {
-    title: string;
-    shortDesc: string;
-    longDesc: string;
-    tags: Array<{ name: string }>;
-    time: string;
-  };
-};
+    title: string
+    shortDesc: string
+    longDesc: string
+    tags: Array<{ name: string }>
+    time: string
+  }
+}
 
 const ProjectDetails = ({ projectData }: Props) => {
   return (
     <div>
-      <h1 className="lg:text-4xl text-2xl lg:leading-[3rem] leading-[2rem] font-semibold">
+      <h1 className="text-2xl font-semibold leading-[2rem] lg:text-4xl lg:leading-[3rem]">
         {projectData.title}
       </h1>
-      <p className="lg:my-4 my-2 lg:text-lg text-base text-cGray font-semibold">
+      <p className="my-2 text-base font-semibold text-cGray lg:my-4 lg:text-lg">
         {projectData.time}
       </p>
       <p
-        className="lg:text-xl text-base [&>a]:text-cPurple [&>a]:font-semibold [&>a]:underline [&>a:hover]:text-cBlack"
+        className="text-base lg:text-xl [&>a:hover]:text-cBlack [&>a]:font-semibold [&>a]:text-cPurple [&>a]:underline"
         dangerouslySetInnerHTML={{ __html: projectData.longDesc }}
       ></p>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectDetails;
+export default ProjectDetails
