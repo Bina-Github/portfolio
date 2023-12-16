@@ -19,8 +19,8 @@ const ProjectColumn = ({ activeProject, handleClick }: Props) => {
         <div className="h-0.5 grow bg-gradient-to-l from-cPurple to-cYellow"></div>
       </div>
 
-      {/* Project Boxes */}
-      <div className="flex flex-row gap-6 flex-wrap justify-evenly">
+      {/* Project Boxes md screen */}
+      <div className="md:flex hidden flex-row gap-6 flex-wrap justify-evenly">
         {projectArray.map(function (data, index) {
           let i = index;
           let active = activeProject === i;
@@ -34,6 +34,26 @@ const ProjectColumn = ({ activeProject, handleClick }: Props) => {
               skillList={data.tags}
               active={active}
               handleClick={handleClick}
+            />
+          );
+        })}
+      </div>
+
+      {/* Project Boxes sm screen */}
+      <div className="md:hidden flex flex-row gap-6 flex-wrap justify-evenly">
+        {projectArray.map(function (data, index) {
+          let i = index;
+          let active = activeProject === i;
+          index++;
+          return (
+            <ProjectBox
+              id={i}
+              title={data.title}
+              key={"projectBox" + index}
+              shortDesc={data.shortDesc}
+              skillList={data.tags}
+              active={active}
+              handleClick={() => {}}
             />
           );
         })}
