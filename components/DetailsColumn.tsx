@@ -48,7 +48,7 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: DetailsColumnProps) => 
 
   return (
     <div className="z-10 w-full md:fixed md:h-screen md:w-0">
-      <div className="md:bg-cYellow absolute h-0 w-screen md:-inset-x-[80px] md:h-full md:w-[420px] md:-skew-x-[5deg] lg:w-[620px]"></div>
+      <div className="md:bg-cYellow absolute h-0 w-screen md:-left-20 md:h-full md:w-[420px] md:-skew-x-[5deg] lg:w-[620px]"></div>
 
       {(shown === -1 || !shouldAnimate) && (
         <div
@@ -63,16 +63,16 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: DetailsColumnProps) => 
           <div>
             {/* Intro-Text */}
             <h1 className="tall:pb-32 shorter:pb-12 short:pb-12 pb-8">
-              <div className="shorter:text-6xl short:text-5xl short:!leading-snug text-3xl leading-8">
+              <p className="shorter:text-6xl short:text-5xl short:!leading-snug text-3xl leading-8">
                 Hi, ich bin
                 <br />
                 <span className="text-cPurple">Sabine Kokot</span>,
-              </div>
-              <div className="shorter:text-5xl short:text-4xl short:!leading-tight text-3xl leading-8">
+              </p>
+              <p className="shorter:text-5xl short:text-4xl short:!leading-tight text-3xl leading-8">
                 Softwareentwicklerin
                 <br />
                 aus Willich
-              </div>
+              </p>
             </h1>
 
             {/* Skill, Tool, Tech Auflistungen */}
@@ -91,29 +91,27 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: DetailsColumnProps) => 
           </div>
 
           {/* Socials */}
-          <div className="text-md text-cGray -ml-3 flex flex-wrap gap-3 whitespace-nowrap pb-4 pt-4 md:w-[270px] lg:w-[500px]">
+          <div className="text-md text-cGray -ml-3 flex flex-wrap gap-3 whitespace-nowrap py-4 md:w-[270px] lg:w-[500px]">
             <button
               onClick={handleMailButtonClick}
               className="flex items-center gap-1"
               title="E-Mail"
             >
-              <svg fill="var(--cGray)" width="24" height="24" viewBox="0 0 24 24">
+              <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M22 5v4l-10 4L2 9V5a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1zM2 11.154V19a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-7.846l-10 4z" />
               </svg>
               E-Mail
             </button>
-            {socialsArray.map(function (data, index) {
-              return (
-                <Link
-                  key={'socials' + index}
-                  className="flex items-center gap-1"
-                  href={data.link}
-                  title={data.name}
-                  target="_blank"
-                  dangerouslySetInnerHTML={{ __html: data.svg + data.name }}
-                ></Link>
-              )
-            })}
+            {socialsArray.map((data, index) => (
+              <Link
+                key={'socials' + index}
+                className="flex items-center gap-1"
+                href={data.link}
+                title={data.name}
+                target="_blank"
+                dangerouslySetInnerHTML={{ __html: data.svg + data.name }}
+              />
+            ))}
           </div>
         </div>
       )}
@@ -122,7 +120,7 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: DetailsColumnProps) => 
       {activeProjectDetails && (
         <div
           className={classNames(
-            'tall:overflow-y-hidden tall:pt-28 shorter:pt-10 short:pt-8 absolute hidden h-full overflow-y-scroll pb-4 pt-8 md:block md:w-[300px] lg:w-[480px]',
+            'tall:overflow-y-hidden tall:pt-28 short:pt-10 absolute hidden h-full overflow-y-scroll pb-4 pt-8 md:block md:w-[300px] lg:w-[480px]',
             detailsColumnTextClasses,
             {
               '-translate-x-[100px] translate-y-[100vh]': fadingIn === shown || fadingOut === shown
