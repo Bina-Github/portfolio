@@ -17,7 +17,7 @@ const ProjectColumn = ({ activeProject, handleClick }: Props) => {
         <div className="from-cPurple to-cYellow h-0.5 grow bg-gradient-to-l"></div>
       </div>
 
-      {/* Project Boxes md screen */}
+      {/* Project Boxes for big screens */}
       <div className="hidden flex-row flex-wrap justify-evenly gap-6 md:flex">
         {projectArray.map(function (data, index) {
           let i = index
@@ -38,7 +38,7 @@ const ProjectColumn = ({ activeProject, handleClick }: Props) => {
         })}
       </div>
 
-      {/* Project Boxes sm screen */}
+      {/* Project Boxes small screens */}
       <div className="flex flex-col items-center gap-6 md:hidden">
         {projectArray.map(function (data, index) {
           let i = index

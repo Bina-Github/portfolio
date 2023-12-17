@@ -13,7 +13,12 @@ type Props = {
 }
 
 const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleClick }: Props) => {
+  // Prop "active" is always false on small screens and can't be changed on small screens
+  // State "isExpanded" is always false on big screens and can't be changed on big screens
   const [isExpanded, setIsExpanded] = useState(false)
+
+  // handleBoxClick is on the whole ProjectBox component (it is empty on small screens)
+  // handleExpand is only on the "mehr/weniger zeigen" p-tag (it is empty on big screens)
   let handleBoxClick
   let handleExpand
   if (handleClick === null) {
@@ -31,6 +36,7 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
       onClick={handleBoxClick}
       className="group relative mx-8 mb-4 rounded-2xl p-4  md:mx-2 md:-ml-4 md:h-[22rem]  md:w-[20rem] md:hover:cursor-pointer lg:ml-0 lg:h-[20rem] lg:w-[32rem] lg:p-8"
     >
+      {/* Border with color transition */}
       <div
         className={classNames(
           'absolute -inset-[2px] rounded-2xl opacity-0 transition-all duration-700 ease-in-out',
@@ -41,6 +47,8 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
         )}
       ></div>
       <div className="bg-cBlack absolute inset-0 rounded-2xl" aria-hidden="true"></div>
+
+      {/* Content */}
       <div className="relative flex flex-col text-white">
         <div className="flex h-[2lh] items-end text-lg font-medium lg:text-2xl">
           <h2>{title}</h2>
