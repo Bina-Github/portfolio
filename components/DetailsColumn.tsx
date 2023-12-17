@@ -7,7 +7,7 @@ import { projectArray } from './projectArray'
 import { socialsArray } from './socialsArray'
 import Link from 'next/link'
 
-type Props = {
+type DetailsColumnProps = {
   activeProject: number
   shouldAnimate: boolean
 }
@@ -17,7 +17,7 @@ const handleMailButtonClick: React.MouseEventHandler = (e) => {
   window.location.href = `mailto:${atob('c2FiaW5la29rb3QxOTk4QGdtYWlsLmNvbQ==')}`
 }
 
-const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
+const DetailsColumn = ({ activeProject, shouldAnimate }: DetailsColumnProps) => {
   const [isFirstRender, setIsFirstRender] = useState(true)
   const [shown, setShown] = useState(-1)
   const [fadingOut, setFadingOut] = useState<number | null>(null)
@@ -48,12 +48,12 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
 
   return (
     <div className="z-10 w-full md:fixed md:h-screen md:w-0">
-      <div className="absolute h-0 w-screen md:-inset-x-[80px] md:h-full md:w-[420px] md:-skew-x-[5deg] md:bg-cYellow lg:w-[620px]"></div>
+      <div className="md:bg-cYellow absolute h-0 w-screen md:-inset-x-[80px] md:h-full md:w-[420px] md:-skew-x-[5deg] lg:w-[620px]"></div>
 
       {(shown === -1 || !shouldAnimate) && (
         <div
           className={classNames(
-            'relative flex min-h-[500px] w-full flex-col justify-between overflow-y-scroll bg-cYellow pt-8 font-bold md:absolute md:h-full md:min-h-0 md:w-[350px] md:bg-transparent lg:w-[550px] tall:overflow-y-hidden tall:pt-28 shorter:overflow-y-hidden shorter:pt-16 short:pt-8',
+            'bg-cYellow tall:overflow-y-hidden tall:pt-28 shorter:overflow-y-hidden shorter:pt-16 short:pt-8 relative flex min-h-[500px] w-full flex-col justify-between overflow-y-scroll pt-8 font-bold md:absolute md:h-full md:min-h-0 md:w-[350px] md:bg-transparent lg:w-[550px]',
             detailsColumnTextClasses,
             {
               '-translate-y-[100vh] translate-x-[100px]': fadingOut === -1 || fadingIn === -1
@@ -62,18 +62,19 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
         >
           <div>
             {/* Intro-Text */}
-            <div className="pb-8 tall:pb-32 shorter:pb-12 short:pb-12">
-              <h1 className="text-3xl leading-[2rem] tall:text-6xl tall:leading-[5rem] shorter:text-6xl shorter:leading-[5rem] short:text-5xl short:leading-[4rem]">
+            <h1 className="tall:pb-32 shorter:pb-12 short:pb-12 pb-8">
+              <div className="shorter:text-6xl short:text-5xl short:!leading-snug text-3xl leading-8">
                 Hi, ich bin
                 <br />
                 <span className="text-cPurple">Sabine Kokot</span>,
-              </h1>
-              <h2 className="text-3xl leading-[2rem] tall:text-5xl tall:leading-[4rem] shorter:text-5xl shorter:leading-[4rem] short:text-4xl short:leading-[3rem]">
+              </div>
+              <div className="shorter:text-5xl short:text-4xl short:!leading-tight text-3xl leading-8">
                 Softwareentwicklerin
                 <br />
                 aus Willich
-              </h2>
-            </div>
+              </div>
+            </h1>
+
             {/* Skill, Tool, Tech Auflistungen */}
             <div className="flex w-full flex-col gap-12 pb-6 md:w-[280px] lg:w-[450px]">
               <SkillsBox
@@ -90,7 +91,7 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
           </div>
 
           {/* Socials */}
-          <div className="text-md -ml-3 flex flex-wrap gap-3 whitespace-nowrap pb-4 pt-4 text-cGray md:w-[270px] lg:w-[500px]">
+          <div className="text-md text-cGray -ml-3 flex flex-wrap gap-3 whitespace-nowrap pb-4 pt-4 md:w-[270px] lg:w-[500px]">
             <button
               onClick={handleMailButtonClick}
               className="flex items-center gap-1"
@@ -121,7 +122,7 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: Props) => {
       {activeProjectDetails && (
         <div
           className={classNames(
-            'absolute hidden h-full overflow-y-scroll pb-4 pt-8 md:block md:w-[300px] lg:w-[480px] tall:overflow-y-hidden tall:pt-28 shorter:pt-10 short:pt-8',
+            'tall:overflow-y-hidden tall:pt-28 shorter:pt-10 short:pt-8 absolute hidden h-full overflow-y-scroll pb-4 pt-8 md:block md:w-[300px] lg:w-[480px]',
             detailsColumnTextClasses,
             {
               '-translate-x-[100px] translate-y-[100vh]': fadingIn === shown || fadingOut === shown

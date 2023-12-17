@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SkillsBox from './SkillsBox'
 import classNames from 'classnames'
 
-type Props = {
+type ProjectBoxProps = {
   id: number
   title: string
   shortDesc: string
@@ -12,7 +12,15 @@ type Props = {
   handleClick: ((projectId: number) => void) | null
 }
 
-const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleClick }: Props) => {
+const ProjectBox = ({
+  id,
+  title,
+  shortDesc,
+  longDesc,
+  skillList,
+  active,
+  handleClick
+}: ProjectBoxProps) => {
   // Prop "active" is always false on small screens and can't be changed on small screens
   // State "isExpanded" is always false on big screens and can't be changed on big screens
   const [isExpanded, setIsExpanded] = useState(false)
@@ -41,12 +49,12 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
         className={classNames(
           'absolute -inset-[2px] rounded-2xl opacity-0 transition-all duration-700 ease-in-out',
           {
-            'bg-gradient-to-br from-cYellow to-cPurple opacity-100 shadow-[0_0_16px_0_rgba(252,186,3,0.3)]':
+            'from-cYellow to-cPurple bg-gradient-to-br opacity-100 shadow-[0_0_16px_0_rgba(252,186,3,0.3)]':
               active
           }
         )}
       ></div>
-      <div className="absolute inset-0 rounded-2xl bg-cBlack" aria-hidden="true"></div>
+      <div className="bg-cBlack absolute inset-0 rounded-2xl" aria-hidden="true"></div>
 
       {/* Content */}
       <div className="relative flex flex-col text-white">
@@ -59,7 +67,7 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
         {!isExpanded && <p className="text-base lg:text-lg">{shortDesc}</p>}
         {isExpanded && (
           <p
-            className="text-base lg:text-lg [&>a:hover]:underline [&>a]:text-cYellow"
+            className="[&>a]:text-cYellow text-base lg:text-lg [&>a:hover]:underline"
             dangerouslySetInnerHTML={{ __html: longDesc }}
           ></p>
         )}
@@ -67,7 +75,7 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
         {(active || isExpanded) && (
           <p
             onClick={handleExpand}
-            className="mb-4 text-base text-cYellow opacity-90 hover:cursor-pointer hover:underline md:group-hover:underline lg:text-lg"
+            className="text-cYellow mb-4 text-base opacity-90 hover:cursor-pointer hover:underline md:group-hover:underline lg:text-lg"
           >
             &gt; Weniger anzeigen
           </p>
@@ -76,7 +84,7 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
         {!active && !isExpanded && (
           <p
             onClick={handleExpand}
-            className="mb-4 text-base text-cYellow opacity-90 hover:cursor-pointer hover:underline md:group-hover:underline lg:text-lg"
+            className="text-cYellow mb-4 text-base opacity-90 hover:cursor-pointer hover:underline md:group-hover:underline lg:text-lg"
           >
             &gt; Mehr Infos
           </p>

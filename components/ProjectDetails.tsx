@@ -1,6 +1,6 @@
 import React from 'react'
 
-type Props = {
+type ProjectDetailsProps = {
   projectData: {
     title: string
     shortDesc: string
@@ -10,17 +10,17 @@ type Props = {
   }
 }
 
-const ProjectDetails = ({ projectData }: Props) => {
+const ProjectDetails = ({ projectData }: ProjectDetailsProps) => {
   return (
     <div>
       <h1 className="text-2xl font-semibold leading-[2rem] lg:text-4xl lg:leading-[3rem]">
         {projectData.title}
       </h1>
-      <p className="my-2 text-base font-semibold text-cGray lg:my-4 lg:text-lg">
+      <p className="text-cGray my-2 text-base font-semibold lg:my-4 lg:text-lg">
         {projectData.time}
       </p>
       <p
-        className="text-base lg:text-xl [&>a:hover]:text-cBlack [&>a]:font-semibold [&>a]:text-cPurple [&>a]:underline"
+        className="[&>a:hover]:text-cBlack [&>a]:text-cPurple text-base lg:text-xl [&>a]:font-semibold [&>a]:underline"
         dangerouslySetInnerHTML={{ __html: projectData.longDesc }}
       ></p>
     </div>

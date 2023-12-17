@@ -1,12 +1,12 @@
 import React, { ComponentPropsWithoutRef } from 'react'
 import SkillTag from './SkillTag'
 
-type Props = ComponentPropsWithoutRef<'div'> & {
+type SkillsBoxProps = ComponentPropsWithoutRef<'div'> & {
   title?: string
   skillList: Array<{ name: string; svg?: string }>
 }
 
-const SkillsBox = ({ title, skillList, className }: Props) => {
+const SkillsBox = ({ title, skillList, className }: SkillsBoxProps) => {
   return (
     <div>
       {title && <h3 className="text-lg md:mb-2 md:text-xl lg:text-2xl">{title}</h3>}

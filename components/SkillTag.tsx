@@ -1,16 +1,16 @@
 import React, { ComponentPropsWithoutRef } from 'react'
 
-type Props = ComponentPropsWithoutRef<'div'> & {
+type SkillTagProps = ComponentPropsWithoutRef<'div'> & {
   name: string
   svg?: string
 }
 
-const SkillTag = ({ name, svg, className }: Props) => {
+const SkillTag = ({ name, svg, className }: SkillTagProps) => {
   return (
     <div
       className={
         className +
-        ' flex flex-row items-center justify-center gap-1 rounded-full px-2.5 py-1.5 font-medium text-cWhite'
+        ' text-cWhite flex flex-row items-center justify-center gap-1 rounded-full px-2.5 py-1.5 font-medium'
       }
     >
       {svg && svg.length > 0 && (

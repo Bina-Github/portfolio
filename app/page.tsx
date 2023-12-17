@@ -23,11 +23,7 @@ export default function Home() {
   }, [])
 
   const handleClick = (projectId: number) => {
-    if (activeProject === projectId) {
-      setActiveProject(-1)
-    } else {
-      setActiveProject(projectId)
-    }
+    setActiveProject((prev) => (prev === projectId ? -1 : projectId))
   }
 
   return (
