@@ -14,19 +14,22 @@ type Props = {
 
 const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleClick }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false)
-  let handleClickFunction
+  let handleBoxClick
+  let handleExpand
   if (handleClick === null) {
-    handleClickFunction = function () {
+    handleExpand = function () {
       setIsExpanded((prev) => !prev)
     }
+    handleBoxClick = function () {}
   } else {
-    handleClickFunction = () => handleClick(id)
+    handleExpand = function () {}
+    handleBoxClick = () => handleClick(id)
   }
 
   return (
     <div
-      onClick={handleClickFunction}
-      className="group relative mx-8 mb-4 rounded-2xl p-4  hover:cursor-pointer md:mx-2 md:-ml-4  md:h-[22rem] md:w-[20rem] lg:ml-0 lg:h-[20rem] lg:w-[32rem] lg:p-8"
+      onClick={handleBoxClick}
+      className="group relative mx-8 mb-4 rounded-2xl p-4  md:mx-2 md:-ml-4 md:h-[22rem]  md:w-[20rem] md:hover:cursor-pointer lg:ml-0 lg:h-[20rem] lg:w-[32rem] lg:p-8"
     >
       <div
         className={classNames(
@@ -54,13 +57,19 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
         )}
 
         {(active || isExpanded) && (
-          <p className="text-cYellow mb-4 text-base opacity-90 group-hover:underline lg:text-lg">
+          <p
+            onClick={handleExpand}
+            className="text-cYellow mb-4 text-base opacity-90 hover:cursor-pointer hover:underline md:group-hover:underline lg:text-lg"
+          >
             &gt; Weniger anzeigen
           </p>
         )}
 
         {!active && !isExpanded && (
-          <p className="text-cYellow mb-4 text-base opacity-90 group-hover:underline lg:text-lg">
+          <p
+            onClick={handleExpand}
+            className="text-cYellow mb-4 text-base opacity-90 hover:cursor-pointer hover:underline md:group-hover:underline lg:text-lg"
+          >
             &gt; Mehr Infos
           </p>
         )}
