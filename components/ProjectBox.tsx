@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SkillsBox from './SkillsBox'
 import classNames from 'classnames'
 
@@ -6,15 +6,26 @@ type Props = {
   id: number
   title: string
   shortDesc: string
+  longDesc: string
   skillList: Array<{ name: string; svg?: string }>
   active: boolean
-  handleClick: (projectId: number) => void
+  handleClick: ((projectId: number) => void) | null
 }
 
-const ProjectBox = ({ id, title, shortDesc, skillList, active, handleClick }: Props) => {
+const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleClick }: Props) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+  let handleClickFunction
+  if (handleClick === null) {
+    handleClickFunction = function () {
+      setIsExpanded((prev) => !prev)
+    }
+  } else {
+    handleClickFunction = () => handleClick(id)
+  }
+
   return (
     <div
-      onClick={() => handleClick(id)}
+      onClick={handleClickFunction}
       className="group relative mx-8 mb-4 rounded-2xl p-4  hover:cursor-pointer md:mx-2 md:-ml-4  md:h-[22rem] md:w-[20rem] lg:ml-0 lg:h-[20rem] lg:w-[32rem] lg:p-8"
     >
       <div
@@ -34,15 +45,21 @@ const ProjectBox = ({ id, title, shortDesc, skillList, active, handleClick }: Pr
 
         <div className="my-2 h-0.5 bg-white"></div>
 
-        <p className="text-base lg:text-lg">{shortDesc}</p>
+        {!isExpanded && <p className="text-base lg:text-lg">{shortDesc}</p>}
+        {isExpanded && (
+          <p
+            className="[&>a]:text-cYellow text-base lg:text-lg [&>a:hover]:underline"
+            dangerouslySetInnerHTML={{ __html: longDesc }}
+          ></p>
+        )}
 
-        {active && (
+        {(active || isExpanded) && (
           <p className="text-cYellow mb-4 text-base opacity-90 group-hover:underline lg:text-lg">
             &gt; Weniger anzeigen
           </p>
         )}
 
-        {!active && (
+        {!active && !isExpanded && (
           <p className="text-cYellow mb-4 text-base opacity-90 group-hover:underline lg:text-lg">
             &gt; Mehr Infos
           </p>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProjectBox from './ProjectBox'
 import { projectArray } from './projectArray'
 
@@ -29,6 +29,7 @@ const ProjectColumn = ({ activeProject, handleClick }: Props) => {
               title={data.title}
               key={'projectBox' + index}
               shortDesc={data.shortDesc}
+              longDesc=""
               skillList={data.tags}
               active={active}
               handleClick={handleClick}
@@ -41,7 +42,6 @@ const ProjectColumn = ({ activeProject, handleClick }: Props) => {
       <div className="flex flex-col items-center gap-6 md:hidden">
         {projectArray.map(function (data, index) {
           let i = index
-          let active = activeProject === i
           index++
           return (
             <ProjectBox
@@ -49,9 +49,10 @@ const ProjectColumn = ({ activeProject, handleClick }: Props) => {
               title={data.title}
               key={'projectBox' + index}
               shortDesc={data.shortDesc}
+              longDesc={data.longDesc}
               skillList={data.tags}
-              active={active}
-              handleClick={() => {}}
+              active={false}
+              handleClick={null}
             />
           )
         })}
