@@ -41,12 +41,12 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
         className={classNames(
           'absolute -inset-[2px] rounded-2xl opacity-0 transition-all duration-700 ease-in-out',
           {
-            'from-cYellow to-cPurple bg-gradient-to-br opacity-100 shadow-[0_0_16px_0_rgba(252,186,3,0.3)]':
+            'bg-gradient-to-br from-cYellow to-cPurple opacity-100 shadow-[0_0_16px_0_rgba(252,186,3,0.3)]':
               active
           }
         )}
       ></div>
-      <div className="bg-cBlack absolute inset-0 rounded-2xl" aria-hidden="true"></div>
+      <div className="absolute inset-0 rounded-2xl bg-cBlack" aria-hidden="true"></div>
 
       {/* Content */}
       <div className="relative flex flex-col text-white">
@@ -59,7 +59,7 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
         {!isExpanded && <p className="text-base lg:text-lg">{shortDesc}</p>}
         {isExpanded && (
           <p
-            className="[&>a]:text-cYellow text-base lg:text-lg [&>a:hover]:underline"
+            className="text-base lg:text-lg [&>a:hover]:underline [&>a]:text-cYellow"
             dangerouslySetInnerHTML={{ __html: longDesc }}
           ></p>
         )}
@@ -67,7 +67,7 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
         {(active || isExpanded) && (
           <p
             onClick={handleExpand}
-            className="text-cYellow mb-4 text-base opacity-90 hover:cursor-pointer hover:underline md:group-hover:underline lg:text-lg"
+            className="mb-4 text-base text-cYellow opacity-90 hover:cursor-pointer hover:underline md:group-hover:underline lg:text-lg"
           >
             &gt; Weniger anzeigen
           </p>
@@ -76,7 +76,7 @@ const ProjectBox = ({ id, title, shortDesc, longDesc, skillList, active, handleC
         {!active && !isExpanded && (
           <p
             onClick={handleExpand}
-            className="text-cYellow mb-4 text-base opacity-90 hover:cursor-pointer hover:underline md:group-hover:underline lg:text-lg"
+            className="mb-4 text-base text-cYellow opacity-90 hover:cursor-pointer hover:underline md:group-hover:underline lg:text-lg"
           >
             &gt; Mehr Infos
           </p>
