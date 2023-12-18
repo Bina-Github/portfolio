@@ -44,7 +44,7 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: DetailsColumnProps) => 
   const activeProjectDetails = projectArray.find((_data, index) => shown === index)
 
   const detailsColumnTextClasses =
-    'yellow-text wide:pl-2 lg:pl-10 pl-8 text-cBlack transition-transform duration-500'
+    'yellow-text wide:pl-2 lg:pl-10 pl-4 text-cBlack transition-transform duration-500'
 
   return (
     <div className="z-10 w-full md:fixed md:h-screen md:w-0">
@@ -91,7 +91,7 @@ const DetailsColumn = ({ activeProject, shouldAnimate }: DetailsColumnProps) => 
           </div>
 
           {/* Socials */}
-          <div className="text-md text-cGray -ml-3 flex flex-wrap gap-3 whitespace-nowrap py-4 md:w-[270px] lg:w-[500px]">
+          <div className="text-md text-cGray flex flex-wrap gap-3 whitespace-nowrap py-4 md:w-[270px] lg:-ml-3 lg:w-[500px]">
             <button
               onClick={handleMailButtonClick}
               className="flex items-center gap-1"

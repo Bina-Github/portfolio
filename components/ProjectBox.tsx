@@ -42,7 +42,7 @@ const ProjectBox = ({
   return (
     <div
       onClick={handleBoxClick}
-      className="group relative mx-8 mb-4 rounded-2xl p-4  md:mx-2 md:-ml-4 md:h-[22rem]  md:w-[20rem] md:hover:cursor-pointer lg:ml-0 lg:h-[20rem] lg:w-[32rem] lg:p-8"
+      className="group relative mx-5 mb-4 rounded-2xl p-4  md:mx-2 md:-ml-4 md:h-[22rem]  md:w-[20rem] md:hover:cursor-pointer lg:ml-0 lg:h-[20rem] lg:w-[32rem] lg:p-8"
     >
       {/* Border with color transition */}
       <div
