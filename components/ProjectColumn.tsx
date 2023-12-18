@@ -9,7 +9,7 @@ type ProjectColumnProps = {
 
 const ProjectColumn = ({ activeProject, handleClick }: ProjectColumnProps) => {
   return (
-    <div className="w-full px-6 pt-14 md:ml-[400px] md:pl-0 md:pr-5 lg:ml-[600px]">
+    <div className="w-full px-2 pt-14 md:ml-[400px] md:pl-0 md:pr-5 lg:ml-[600px]">
       {/* Headline */}
       <div className="mb-14 flex flex-row items-center justify-center">
         <div className="from-cPurple to-cYellow h-0.5 grow bg-gradient-to-r"></div>
