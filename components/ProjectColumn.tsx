@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ProjectBox from './ProjectBox'
 import { projectArray } from './projectArray'
 
@@ -13,7 +13,7 @@ const ProjectColumn = ({ activeProject, handleClick }: ProjectColumnProps) => {
       {/* Headline */}
       <div className="mb-14 flex flex-row items-center justify-center">
         <div className="from-cPurple to-cYellow h-0.5 grow bg-gradient-to-r"></div>
-        <h1 className="text-cYellow mx-3 text-2xl lg:text-3xl">Ausbildung & Projekte</h1>
+        <h2 className="text-cYellow mx-3 text-2xl lg:text-3xl">Ausbildung & Projekte</h2>
         <div className="from-cPurple to-cYellow h-0.5 grow bg-gradient-to-l"></div>
       </div>
 

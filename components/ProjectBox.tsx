@@ -59,7 +59,7 @@ const ProjectBox = ({
       {/* Content */}
       <div className="relative flex flex-col text-white">
         <div className="flex h-[2lh] items-end text-lg font-medium lg:text-2xl">
-          <h2>{title}</h2>
+          <h3>{title}</h3>
         </div>
 
         <div className="my-2 h-0.5 bg-white"></div>

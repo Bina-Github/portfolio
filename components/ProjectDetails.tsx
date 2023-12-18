@@ -13,9 +13,9 @@ type ProjectDetailsProps = {
 const ProjectDetails = ({ projectData }: ProjectDetailsProps) => {
   return (
     <div>
-      <h1 className="text-2xl font-semibold leading-[2rem] lg:text-4xl lg:leading-[3rem]">
+      <h2 className="text-2xl font-semibold leading-[2rem] lg:text-4xl lg:leading-[3rem]">
         {projectData.title}
-      </h1>
+      </h2>
       <p className="text-cGray my-2 text-base font-semibold lg:my-4 lg:text-lg">
         {projectData.time}
       </p>
