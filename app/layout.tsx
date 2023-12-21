@@ -7,7 +7,11 @@ const raleway = Raleway({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Sabine Kokot | Softwareentwicklerin',
   description: 'Portfolio von Sabine Kokot',
-  themeColor: '#F6AB2B'
+  openGraph: {
+    title: 'Sabine Kokot | Softwareentwicklerin',
+    description: 'Portfolio von Sabine Kokot',
+    images: '/assets/favicon.png'
+  }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
