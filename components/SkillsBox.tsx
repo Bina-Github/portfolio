@@ -9,7 +9,7 @@ type SkillsBoxProps = ComponentPropsWithoutRef<'div'> & {
 const SkillsBox = ({ title, skillList, className }: SkillsBoxProps) => {
   return (
     <div>
-      {title && <h3 className="text-lg md:mb-2 md:text-xl lg:text-2xl">{title}</h3>}
+      {title && <h2 className="text-lg md:mb-2 md:text-xl lg:text-2xl">{title}</h2>}
       <div className="flex flex-wrap gap-2">
         {skillList.map(function (data, index) {
           return <SkillTag name={data.name} svg={data.svg} key={index} className={className} />
