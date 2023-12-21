@@ -40,7 +40,7 @@ export const projectArray = [
       { name: 'TypeScript' },
       { name: 'Tailwind' },
       { name: 'CSS' },
-      { name: 'directus' },
+      { name: 'Directus' },
       { name: 'GitHub' }
     ],
     time: '07.2023 - 09.2023'
