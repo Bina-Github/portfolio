@@ -47,10 +47,9 @@ const ProjectBox = ({
       {/* Border with color transition */}
       <div
         className={classNames(
-          'absolute -inset-[2px] rounded-2xl opacity-0 transition-all duration-700 ease-in-out',
+          'from-cYellow to-cPurple absolute -inset-[2px] rounded-2xl bg-gradient-to-br opacity-0 shadow-[0_0_16px_0_rgba(252,186,3,0.3)] transition-all duration-700 ease-in-out',
           {
-            'from-cYellow to-cPurple bg-gradient-to-br opacity-100 shadow-[0_0_16px_0_rgba(252,186,3,0.3)]':
-              active
+            ' opacity-100': active
           }
         )}
       ></div>
