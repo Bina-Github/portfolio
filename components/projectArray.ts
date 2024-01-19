@@ -46,7 +46,7 @@ export const projectArray = [
     time: '07.2023 - 09.2023'
   },
   {
-    title: 'Entwicklung der Website für die vdla drb Gewerkschaft',
+    title: 'Entwicklung der Website für die vdla brd Gewerkschaft',
     shortDesc:
       'Design, Entwicklung und Einrichtung eines eigenen WordPress Themes für die Fachgruppe Bezirksregierung Düsseldorf der vdla Gewerkschaft',
     longDesc:
